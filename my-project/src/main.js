@@ -17,7 +17,7 @@ require('bootstrap');
 require('bootstrap/dist/css/bootstrap.css');
 require('bootstrap/dist/js/bootstrap.min.js');
 require('vue-bootstrap-datetimepicker') ;
-
+require('./assets/styles.css')
 
 Vue.use(VModal, { dialog: true })
 Vue.use(DataTablee)

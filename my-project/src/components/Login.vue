@@ -1,5 +1,8 @@
 <template>
 <div class="hello">
+<div class="bgcolor">
+Sri Pada Vallabha
+</div>
 <img src="http://fontslogo.com/wp-content/uploads/2013/12/Engagement_Johnson-and-Johnson-Logo-Font.jpg">
 <div class="container">
 	<div class="login-container">
