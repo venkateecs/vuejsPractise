@@ -8,11 +8,9 @@ import Vuex from 'vuex'
 import Store from './store/store'
 import VueGoodTable from 'vue-good-table';
 import DataTablee from 'vue-data-tablee'
-import Datepicker from 'vuejs-datepicker';
 import _ from 'underscore'
 import VModal from 'vue-js-modal'
 Vue.use(require('vue-moment'));
-
 require('bootstrap');
 require('bootstrap/dist/css/bootstrap.css');
 require('bootstrap/dist/js/bootstrap.min.js');
@@ -23,7 +21,6 @@ Vue.use(VModal, { dialog: true })
 Vue.use(DataTablee)
 Vue.use(VueResource)
 Vue.use(VueGoodTable);
-Vue.use(Datepicker);
 window.jQuery = require('jquery');
 window.$ = window.jQuery;
 Vue.config.productionTip = false
