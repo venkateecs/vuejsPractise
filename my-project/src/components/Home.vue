@@ -1,6 +1,5 @@
 <template>
 <div class="hello">
-
 <div class="container">
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-warning btn-lg logout" data-toggle="modal" data-target="#myModal">Logout</button>
