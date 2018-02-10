@@ -1,8 +1,7 @@
 <template>
 <div class="hello">
 <vue-highcharts :options="options" ref="lineCharts"></vue-highcharts>
-    <button @click="load">load</button>
-
+<button class="btn btn-info btn-lg" @click="load">Graph</button>
 <div class="container">
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-warning btn-lg logout" data-toggle="modal" data-target="#myModal">Logout</button>
@@ -115,23 +114,23 @@ export default {
       },
     show(){
       this.$modal.show('hello-world', {
-  title: 'Alert!',
-  text: 'You are too awesome',
-  buttons: [
-    { 
-      title: 'Deal with it',
-      handler: () => { alert('Woot!') }
-    },
-    {
-      title: '',       // Button title
-      default: true,    // Will be triggered by default if 'Enter' pressed.
-      handler: () => {} // Button click handler
-    },
-    { 
-      title: 'Close'
-    }
- ]
-})
+        title: 'Alert!',
+        text: 'You are too awesome',
+        buttons: [
+          { 
+            title: 'Deal with it',
+            handler: () => { alert('Woot!') }
+          },
+          {
+            title: '',       // Button title
+            default: true,    // Will be triggered by default if 'Enter' pressed.
+            handler: () => {} // Button click handler
+          },
+          { 
+            title: 'Close'
+          }
+       ]
+    })
     }
   },
   created(){
