@@ -16,6 +16,7 @@ require('bootstrap/dist/css/bootstrap.css');
 require('bootstrap/dist/js/bootstrap.min.js');
 require('vue-bootstrap-datetimepicker') ;
 require('./assets/styles.css')
+require('vue2-highcharts')
 
 Vue.use(VModal, { dialog: true })
 Vue.use(DataTablee)

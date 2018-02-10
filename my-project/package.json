@@ -26,6 +26,7 @@
     "vue-router": "^3.0.1",
     "vue-tables": "^1.6.44",
     "vue2-bootstrap-modal": "^0.1.14",
+    "vue2-highcharts": "^1.1.6",
     "vuejs-datepicker": "^0.9.25",
     "vuetable": "^1.5.12",
     "vuex": "^3.0.1"

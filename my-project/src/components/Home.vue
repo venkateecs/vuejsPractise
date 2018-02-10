@@ -1,5 +1,8 @@
 <template>
 <div class="hello">
+<vue-highcharts :options="options" ref="lineCharts"></vue-highcharts>
+    <button @click="load">load</button>
+
 <div class="container">
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-warning btn-lg logout" data-toggle="modal" data-target="#myModal">Logout</button>
@@ -31,6 +34,19 @@
 import store from '../store/store'
 import { mapActions, mapGetters } from 'vuex';
 import _ from 'underscore'
+import VueHighcharts from 'vue2-highcharts'
+const asyncData = {
+  name: 'Tokyo',
+  marker: {
+    symbol: 'square'
+  },
+  data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
+    y: 26.5,
+    marker: {
+      symbol: 'url(http://www.highcharts.com/demo/gfx/sun.png)'
+    }
+  }, 23.3, 18.3, 13.9, 9.6]
+}
 export default {
   name: 'Home',
   computed:{
@@ -40,6 +56,48 @@ export default {
   },
   data () {
     return {
+      options: {
+          chart: {
+            type: 'spline'
+          },
+          title: {
+            text: 'Monthly Average Temperature'
+          },
+          subtitle: {
+            text: 'Source: WorldClimate.com'
+          },
+          xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+          },
+          yAxis: {
+            title: {
+              text: 'Temperature'
+            },
+            labels: {
+              formatter: function () {
+                return this.value + '°';
+              }
+            }
+          },
+          tooltip: {
+            crosshairs: true,
+            shared: true
+          },
+          credits: {
+            enabled: false
+          },
+          plotOptions: {
+            spline: {
+              marker: {
+                radius: 4,
+                lineColor: '#666666',
+                lineWidth: 1
+              }
+            }
+          },
+          series: []
+        }
     }
   },
   methods:{
@@ -47,6 +105,14 @@ export default {
       localStorage.removeItem("token");
       this.$router.push('/');
     },
+    load(){
+          let lineCharts = this.$refs.lineCharts;
+          lineCharts.delegateMethod('showLoading', 'Loading...');
+          setTimeout(() => {
+              lineCharts.addSeries(asyncData);
+              lineCharts.hideLoading();
+          }, 2000)
+      },
     show(){
       this.$modal.show('hello-world', {
   title: 'Alert!',
@@ -72,7 +138,7 @@ export default {
   },
   mounted(){
   },
-  components: { }
+  components: { VueHighcharts}
 }
 </script>
 
